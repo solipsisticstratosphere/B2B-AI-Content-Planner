@@ -47,7 +47,6 @@ export function AIPanel({ onShowUpgrade, restoreItem, onGenerated, onResultChang
   const [isStreaming, setIsStreaming] = useState(false)
   const abortRef = useRef<AbortController | null>(null)
 
-  const isPro = maxTokens > 5
   const tokenRatio = tokensUsed / maxTokens
   const isNearLimit = tokenRatio >= 0.8 && tokenRatio < 1
 
