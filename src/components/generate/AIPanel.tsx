@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import toast from 'react-hot-toast'
-import { Loader2, Sparkles, AlertTriangle, Info, TrendingUp, Crown } from 'lucide-react'
+import { Loader2, Sparkles, AlertTriangle, Info, TrendingUp } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
@@ -162,26 +162,6 @@ export function AIPanel({ onShowUpgrade, restoreItem, onGenerated, onResultChang
 
   return (
     <div className="space-y-4">
-      {/* Header */}
-      <div className="flex items-start justify-between gap-4">
-        <div>
-          <h1 className="text-2xl font-semibold tracking-tight">AI Generate</h1>
-          <p className="text-sm text-muted-foreground mt-1">
-            Describe your topic and let AI draft your post
-          </p>
-        </div>
-        {!isPro && (
-          <button
-            type="button"
-            onClick={onShowUpgrade}
-            className="flex items-center gap-1.5 text-xs font-medium text-amber-300 bg-amber-400/10 border border-amber-400/20 rounded-full px-3 py-1.5 hover:bg-amber-400/20 transition-colors shrink-0"
-          >
-            <Crown className="w-3.5 h-3.5" />
-            Upgrade to Pro
-          </button>
-        )}
-      </div>
-
       {/* Compose */}
       <Card>
         <CardHeader className="pb-3">
