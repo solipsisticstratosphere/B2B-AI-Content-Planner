@@ -16,8 +16,8 @@ export default function Auth() {
     <div className="min-h-screen bg-background flex flex-col">
       {/* Portfolio demo banner */}
       <div className="bg-amber-500/10 border-b border-amber-500/20 px-4 py-2.5 flex items-center justify-center gap-2">
-        <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0" />
-        <p className="text-xs text-amber-300 text-center">
+        <AlertTriangle className="w-4 h-4 text-amber-500 dark:text-amber-400 shrink-0" />
+        <p className="text-xs text-amber-700 dark:text-amber-300 text-center">
           Portfolio demo — built to showcase architecture and UX. Functionality is real; branding is
           fictional.
         </p>

@@ -230,9 +230,9 @@ export function AIPanel({ onShowUpgrade, restoreItem, onGenerated, onResultChang
                 className={cn(
                   'font-medium tabular-nums',
                   !canGenerate
-                    ? 'text-red-400'
+                    ? 'text-red-500 dark:text-red-400'
                     : isNearLimit
-                      ? 'text-amber-400'
+                      ? 'text-amber-500 dark:text-amber-400'
                       : 'text-muted-foreground'
                 )}
               >
@@ -253,7 +253,7 @@ export function AIPanel({ onShowUpgrade, restoreItem, onGenerated, onResultChang
           </div>
 
           {!canGenerate && (
-            <div className="flex items-center gap-2 text-sm text-amber-400 bg-amber-400/10 border border-amber-400/20 rounded-md px-3 py-2.5">
+            <div className="flex items-center gap-2 text-sm text-amber-600 dark:text-amber-400 bg-amber-400/10 border border-amber-400/20 rounded-md px-3 py-2.5">
               <AlertTriangle className="w-4 h-4 shrink-0" />
               <span>
                 All {maxTokens} free tokens used.{' '}
@@ -270,7 +270,7 @@ export function AIPanel({ onShowUpgrade, restoreItem, onGenerated, onResultChang
           )}
 
           {isNearLimit && (
-            <div className="flex items-center gap-2 text-xs text-amber-400/80 bg-amber-400/5 border border-amber-400/15 rounded-md px-3 py-2">
+            <div className="flex items-center gap-2 text-xs text-amber-600/80 dark:text-amber-400/80 bg-amber-400/5 border border-amber-400/15 rounded-md px-3 py-2">
               <AlertTriangle className="w-3.5 h-3.5 shrink-0" />
               <span>
                 Almost out of tokens.{' '}

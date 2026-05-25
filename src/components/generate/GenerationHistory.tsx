@@ -5,9 +5,9 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import type { GenerationHistory as HistoryItem } from '@/lib/types'
 
 const PLATFORM_BADGE: Record<string, string> = {
-  linkedin: 'bg-blue-500/20 text-blue-300 border border-blue-500/30',
-  twitter: 'bg-sky-400/20 text-sky-300 border border-sky-400/30',
-  telegram: 'bg-indigo-400/20 text-indigo-300 border border-indigo-400/30',
+  linkedin: 'bg-blue-500/20 text-blue-600 dark:text-blue-300 border border-blue-500/30',
+  twitter: 'bg-sky-400/20 text-sky-600 dark:text-sky-300 border border-sky-400/30',
+  telegram: 'bg-indigo-400/20 text-indigo-600 dark:text-indigo-300 border border-indigo-400/30',
 }
 
 const PLATFORM_LABELS: Record<string, string> = {

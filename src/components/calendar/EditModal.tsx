@@ -48,13 +48,13 @@ const STATUS_CHIPS: {
     value: 'draft',
     label: 'Draft',
     dot: 'bg-slate-400',
-    active: 'bg-slate-500/15 text-slate-300 border-slate-500/30',
+    active: 'bg-slate-500/15 text-slate-600 dark:text-slate-300 border-slate-500/30',
   },
   {
     value: 'published',
     label: 'Published',
     dot: 'bg-emerald-400',
-    active: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30',
+    active: 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-300 border-emerald-500/30',
   },
 ]
 
@@ -89,9 +89,9 @@ export function EditModal({ post, onClose }: EditModalProps) {
   const charRatio = charCount / charLimit
   const charColorClass =
     charRatio >= 1
-      ? 'text-red-400'
+      ? 'text-red-500 dark:text-red-400'
       : charRatio >= 0.8
-        ? 'text-amber-400'
+        ? 'text-amber-500 dark:text-amber-400'
         : 'text-muted-foreground/50'
 
   async function handleSave() {

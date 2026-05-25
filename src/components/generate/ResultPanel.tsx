@@ -48,9 +48,9 @@ export function ResultPanel({ text, isStreaming, isDone, platform, prompt }: Res
   const charRatio = charCount / charLimit
   const charColorClass =
     charRatio >= 1
-      ? 'text-red-400'
+      ? 'text-red-500 dark:text-red-400'
       : charRatio >= 0.8
-        ? 'text-amber-400'
+        ? 'text-amber-500 dark:text-amber-400'
         : 'text-muted-foreground/60'
 
   async function handleCopy() {
