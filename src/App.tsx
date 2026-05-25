@@ -1,6 +1,7 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
 import { AuthProvider } from './hooks/AuthProvider'
+import { ThemeProvider } from './hooks/ThemeProvider'
 import { useAuth } from './hooks/useAuth'
 import { AppLayout } from './components/layout/AppLayout'
 import Auth from './pages/Auth'
@@ -23,6 +24,7 @@ function ProtectedRoute({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   return (
+    <ThemeProvider>
     <AuthProvider>
       <BrowserRouter>
         <Toaster
@@ -58,5 +60,6 @@ export default function App() {
         </Routes>
       </BrowserRouter>
     </AuthProvider>
+    </ThemeProvider>
   )
 }

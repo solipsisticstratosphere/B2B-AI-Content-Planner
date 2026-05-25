@@ -58,7 +58,7 @@ export default function Generate() {
           <button
             type="button"
             onClick={() => setShowUpgrade(true)}
-            className="flex items-center gap-1.5 text-xs font-medium text-amber-300 bg-amber-400/10 border border-amber-400/20 rounded-full px-3 py-1.5 hover:bg-amber-400/20 transition-colors shrink-0"
+            className="flex items-center gap-1.5 text-xs font-medium text-amber-600 dark:text-amber-300 bg-amber-400/10 border border-amber-400/20 rounded-full px-3 py-1.5 hover:bg-amber-400/20 transition-colors shrink-0"
           >
             <Crown className="w-3.5 h-3.5" />
             Upgrade to Pro

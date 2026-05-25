@@ -11,9 +11,9 @@ const PLATFORM_STYLES = {
 }
 
 const PLATFORM_BADGE_STYLES = {
-  linkedin: 'bg-blue-500/20 text-blue-300 border-blue-500/30',
-  twitter: 'bg-sky-400/20 text-sky-300 border-sky-400/30',
-  telegram: 'bg-indigo-400/20 text-indigo-300 border-indigo-400/30',
+  linkedin: 'bg-blue-500/20 text-blue-600 dark:text-blue-300 border-blue-500/30',
+  twitter: 'bg-sky-400/20 text-sky-600 dark:text-sky-300 border-sky-400/30',
+  telegram: 'bg-indigo-400/20 text-indigo-600 dark:text-indigo-300 border-indigo-400/30',
 }
 
 const PLATFORM_LABELS = {
@@ -103,8 +103,8 @@ export function PostCard({ post, onClick, onStatusChange }: PostCardProps) {
             className={cn(
               'opacity-0 group-hover/card:opacity-100 transition-opacity flex items-center gap-1 text-[10px] font-medium px-1.5 py-0.5 rounded',
               isPublished
-                ? 'bg-slate-500/20 text-slate-300 hover:bg-slate-500/35'
-                : 'bg-emerald-500/20 text-emerald-300 hover:bg-emerald-500/35'
+                ? 'bg-slate-500/20 text-slate-600 dark:text-slate-300 hover:bg-slate-500/35'
+                : 'bg-emerald-500/20 text-emerald-600 dark:text-emerald-300 hover:bg-emerald-500/35'
             )}
           >
             {isPublished ? (

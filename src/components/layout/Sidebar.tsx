@@ -1,10 +1,11 @@
 import { NavLink } from 'react-router-dom'
-import { LayoutDashboard, Sparkles, Calendar, LogOut, Zap, Crown } from 'lucide-react'
+import { LayoutDashboard, Sparkles, Calendar, LogOut, Zap, Crown, Sun, Moon } from 'lucide-react'
 import { formatDistanceToNow, parseISO } from 'date-fns'
 import { Button } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
 import { useAuth } from '@/hooks/useAuth'
 import { useUsage } from '@/hooks/useUsage'
+import { useTheme } from '@/hooks/useTheme'
 import { UpgradeModal } from '@/components/generate/UpgradeModal'
 import { useState } from 'react'
 import { cn } from '@/lib/utils'
@@ -18,6 +19,7 @@ const navItems = [
 export function Sidebar() {
   const { user, signOut } = useAuth()
   const { tokensUsed, maxTokens, resetDate } = useUsage()
+  const { theme, toggleTheme } = useTheme()
   const [showUpgrade, setShowUpgrade] = useState(false)
 
   const fullName =
@@ -81,7 +83,7 @@ export function Sidebar() {
             className={cn(
               'text-[10px] font-medium px-1.5 py-0.5 rounded inline-block mt-0.5',
               isPro
-                ? 'bg-amber-500/20 text-amber-300'
+                ? 'bg-amber-500/20 text-amber-600 dark:text-amber-300'
                 : 'bg-muted text-muted-foreground'
             )}
           >
@@ -110,9 +112,9 @@ export function Sidebar() {
           )}
         />
         {tokensUsed >= maxTokens ? (
-          <p className="text-xs text-red-400">Limit reached · Upgrade for more</p>
+          <p className="text-xs text-red-500 dark:text-red-400">Limit reached · Upgrade for more</p>
         ) : tokensUsed / maxTokens >= 0.8 ? (
-          <p className="text-xs text-amber-400">Almost out · Consider upgrading</p>
+          <p className="text-xs text-amber-500 dark:text-amber-400">Almost out · Consider upgrading</p>
         ) : (
           <p className="text-xs text-muted-foreground/50">Resets {resetLabel}</p>
         )}
@@ -133,8 +135,21 @@ export function Sidebar() {
         </div>
       )}
 
-      {/* Sign out */}
-      <div className="px-3 pb-4">
+      {/* Theme toggle + Sign out */}
+      <div className="px-3 pb-4 space-y-1">
+        <Button
+          variant="ghost"
+          size="sm"
+          className="w-full justify-start gap-3 text-muted-foreground hover:text-foreground"
+          onClick={toggleTheme}
+        >
+          {theme === 'dark' ? (
+            <Sun className="w-4 h-4" />
+          ) : (
+            <Moon className="w-4 h-4" />
+          )}
+          {theme === 'dark' ? 'Light mode' : 'Dark mode'}
+        </Button>
         <Button
           variant="ghost"
           size="sm"
